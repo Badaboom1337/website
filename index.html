@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Git — система контролю версій</title>
+  <title>Git та Linux</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -19,6 +19,20 @@
       padding: 20px;
       text-align: center;
     }
+    nav {
+      background: #444;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
     section {
       padding: 20px;
       margin: 20px;
@@ -29,11 +43,16 @@
     h2 {
       color: #24292f;
     }
-    code {
+    code, pre {
       background: #eee;
-      padding: 2px 6px;
+      padding: 4px 6px;
       border-radius: 4px;
       font-family: Consolas, monospace;
+    }
+    pre {
+      display: block;
+      padding: 10px;
+      overflow-x: auto;
     }
     footer {
       text-align: center;
@@ -46,16 +65,20 @@
 </head>
 <body>
   <header>
-    <h1>Git — система контролю версій</h1>
+    <h1>Навчальна сторінка: Git та Linux</h1>
   </header>
 
-  <section>
-    <h2>Що таке система контролю версій?</h2>
-    <p>Системи контролю версій (VCS) — це програмні інструменти, які дозволяють відслідковувати зміни у файлах, керувати версіями коду та спільною роботою. Найпопулярнішою є Git.</p>
-  </section>
+  <nav>
+    <a href="#git">Git</a>
+    <a href="#linux">Linux</a>
+  </nav>
 
-  <section>
-    <h2>Переваги Git</h2>
+  <!-- ======= Git ======= -->
+  <section id="git">
+    <h2>Git — система контролю версій</h2>
+    <p>Системи контролю версій (VCS) — це програмні інструменти, які дозволяють відслідковувати зміни у файлах, керувати версіями коду та спільною роботою. Найпопулярнішою є Git.</p>
+
+    <h3>Переваги Git</h3>
     <ul>
       <li>Розподілена система — кожен розробник має повну копію репозиторію.</li>
       <li>Висока швидкість роботи.</li>
@@ -63,10 +86,8 @@
       <li>Надійність та безпека даних.</li>
       <li>Широке використання у світі (GitHub, GitLab, Bitbucket).</li>
     </ul>
-  </section>
 
-  <section>
-    <h2>10 базових команд Git</h2>
+    <h3>10 базових команд Git</h3>
     <ol>
       <li><code>git init</code> — створення нового репозиторію.</li>
       <li><code>git clone [url]</code> — клонування існуючого репозиторію.</li>
@@ -79,10 +100,7 @@
       <li><code>git merge [гілка]</code> — злиття гілок.</li>
       <li><code>git push</code> / <code>git pull</code> — відправка чи отримання змін з віддаленого репозиторію.</li>
     </ol>
-  </section>
-
-  <section>
-    <h2>Джерела</h2>
+    <h3>Джерела по Git</h3>
     <ul>
       <li><a href="https://git-scm.com/book/uk">Офіційна книга по Git</a></li>
       <li><a href="https://www.atlassian.com/git/tutorials">Atlassian Git Tutorials</a></li>
@@ -90,8 +108,60 @@
     </ul>
   </section>
 
+  <!-- ======= Linux ======= -->
+  <section id="linux">
+    <h2>GNU/Linux</h2>
+    <h3>Коротка інформація</h3>
+    <p>GNU/Linux — це сімейство операційних систем з відкритим кодом, побудованих на ядрі Linux. Вона широко використовується у серверах, десктопах, мобільних пристроях та вбудованих системах. Linux відомий своєю стабільністю, безпекою та гнучкістю.</p>
+
+    <h3>Найбільш популярні дистрибутиви</h3>
+    <ul>
+      <li><strong>Ubuntu</strong> — простий у використанні дистрибутив для новачків.</li>
+      <li><strong>Debian</strong> — стабільний і надійний.</li>
+      <li><strong>Fedora</strong> — сучасний, з новими технологіями.</li>
+      <li><strong>Arch Linux</strong> — мінімалістичний, для досвідчених користувачів.</li>
+      <li><strong>CentOS / Rocky Linux</strong> — серверні рішення.</li>
+    </ul>
+
+    <h3>Команди Linux CLI</h3>
+    <ul>
+      <li><code>pwd</code> — показати поточну директорію.</li>
+      <li><code>echo "Hello"</code> — вивести текст.</li>
+      <li><code>ls</code> — показати список файлів.</li>
+      <li><code>cd [шлях]</code> — змінити директорію.</li>
+      <li><code>touch file.txt</code> — створити файл.</li>
+      <li><code>mkdir newdir</code> — створити папку.</li>
+      <li><code>cp file1 file2</code> — копіювати файл.</li>
+      <li><code>mv file1 file2</code> — перемістити або перейменувати файл.</li>
+      <li><code>rm file.txt</code> — видалити файл.</li>
+      <li><code>history</code> — історія виконаних команд.</li>
+    </ul>
+
+    <h3>Bash-скрипт (імітація авторизації)</h3>
+    <pre><code>#!/bin/bash
+echo "Введіть логін:"
+read login
+echo "Введіть пароль:"
+read -s password
+
+if [[ $login == "admin" && $password == "1234" ]]; then
+  echo "Авторизація успішна! Ласкаво просимо, $login."
+else
+  echo "Помилка авторизації. Спробуйте ще раз."
+fi
+</code></pre>
+
+    <h3>Джерела по Linux</h3>
+    <ul>
+      <li><a href="https://www.linux.org/">Linux.org</a></li>
+      <li><a href="https://ubuntu.com/">Ubuntu</a></li>
+      <li><a href="https://wiki.archlinux.org/">ArchWiki</a></li>
+      <li><a href="https://www.tldp.org/">The Linux Documentation Project</a></li>
+    </ul>
+  </section>
+
   <footer>
-    <p>© 2025 | Сторінка про Git</p>
+    <p>© 2025 | Сторінка про Git та Linux</p>
   </footer>
 </body>
 </html>
